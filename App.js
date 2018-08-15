@@ -1,14 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button } from 'react-native';
-/*
-  createBottomTabNavigator is a tab bottom that holds the
-*/
-import {createBottomTabNavigator} from 'react-navigation';
-
-/*SPLASH SCREEN IMPORT HERE
-import SplashScreen from 'react-native-splash-screen'
-*/
-
+import { StyleSheet, Text, View,Button,AsyncStorage } from 'react-native';
+import { SwitchNavigator,StackNavigator,createBottomTabNavigator } from 'react-navigation';
 /*
   BottomNav is something nice to have , but react-navigation has a build in
   bottom tab functionality that can flip through tabs
@@ -16,46 +8,51 @@ import SplashScreen from 'react-native-splash-screen'
   USED IN CREATE-REACT-APP - DEPRECIATED IN REACT-NATIVE
   import BottomNav  from './src/components/nav'
 */
+import Home from './src/screens/home';
+import Wallet from './src/screens/wallet';
+import CreatePin from './src/screens/createpin'
 
+ class App extends React.Component {
+  constructor(){
+    super();
+    this._bootstrapAsync();
+  }
 
-/*
-  Need to Import the screens
-*/
-import Home from './src/screens/home'
-import Wallet from './src/screens/wallet'
+  _bootstrapAsync = async () => {
+    const userToken = await AsyncStorage.getItem('userToken');
 
-
-
-export default class App extends React.Component {
+    // This will switch to the App screen or Auth screen and this loading
+    // screen will be unmounted and thrown away.
+    this.props.navigation.navigate(userToken ? 'Splash' : 'Start');
+  };
 
   render(){
     return (
       <View style={{flex:1}}>
-        <AppNavigator/>
+
       </View>
     );
   }
 }
 
 /*
-  Navigation for the screens of the application
+    CREATES TWO SEPERATE PATHS FOR NAVIGATION TO GO TO
+    1.SPLASH SCREEN  => THEN WE HEAD TO THE NEXT
+    2.HOME SCREEN + WALLET SCREEN
 */
-const AppNavigator = createBottomTabNavigator(
-  {
-    HomeScreen :Home,
-    WalletScreen: Wallet,
-  },
-  {
-    initialRouteName: 'HomeScreen',
-  },
+const StartStack = createBottomTabNavigator({ HomeScreen:Home, WalletScreen:Wallet });
+const SplashStack = StackNavigator({ Pin: CreatePin });
 
-)
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+export default SwitchNavigator(
+  {
+    AuthLoading: App,
+    Splash: SplashStack,
+    Start: StartStack,
   },
-});
+  {
+    initialRouteName: 'AuthLoading',
+  }
+
+
+
+);
