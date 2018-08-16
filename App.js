@@ -13,6 +13,7 @@ import Wallet from './src/screens/wallet';
 import CreatePin from './src/screens/createpin';
 import PortfolioOption from './src/screens/portfoliooption';
 import CreatePortfolio from './src/screens/createportfolio';
+import Login from './src/screens/login';
 
 
  class App extends React.Component {
@@ -50,7 +51,8 @@ const StartStack = createBottomTabNavigator(
 );
 
 const SplashStack = createStackNavigator(
-  {  CreatePortfolioScreen : CreatePortfolio,
+  { LoginScreen: Login,
+    CreatePortfolioScreen : CreatePortfolio,
      PortfolioOptionScreen: PortfolioOption,
     Pin: CreatePin
   },{

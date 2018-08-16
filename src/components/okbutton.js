@@ -20,13 +20,14 @@ export default class OkButton extends Component {
 
 const styles = StyleSheet.create({
   buttonStyle:{
-    borderRadius:20,
-    backgroundColor:"rgba(120,120,120,1)",
-    marginTop:25
+    borderRadius:30,
+    backgroundColor:"rgba(100,100,100,1)",
+    marginTop:25,
+    height:60,
+    width:60
   },
   buttonText:{
     color:'#000000',
-    fontSize:16,
-    fontWeight:'700'
+    fontSize:24,
   }
 });
