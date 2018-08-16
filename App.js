@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button,AsyncStorage } from 'react-native';
-import { SwitchNavigator,StackNavigator,createBottomTabNavigator } from 'react-navigation';
+import { SwitchNavigator,createStackNavigator,createBottomTabNavigator } from 'react-navigation';
 /*
   BottomNav is something nice to have , but react-navigation has a build in
   bottom tab functionality that can flip through tabs
@@ -10,7 +10,10 @@ import { SwitchNavigator,StackNavigator,createBottomTabNavigator } from 'react-n
 */
 import Home from './src/screens/home';
 import Wallet from './src/screens/wallet';
-import CreatePin from './src/screens/createpin'
+import CreatePin from './src/screens/createpin';
+import PortfolioOption from './src/screens/portfoliooption';
+import CreatePortfolio from './src/screens/createportfolio';
+
 
  class App extends React.Component {
   constructor(){
@@ -40,8 +43,23 @@ import CreatePin from './src/screens/createpin'
     1.SPLASH SCREEN  => THEN WE HEAD TO THE NEXT
     2.HOME SCREEN + WALLET SCREEN
 */
-const StartStack = createBottomTabNavigator({ HomeScreen:Home, WalletScreen:Wallet });
-const SplashStack = StackNavigator({ Pin: CreatePin });
+const StartStack = createBottomTabNavigator(
+  {
+   HomeScreen:Home, WalletScreen:Wallet
+ }
+);
+
+const SplashStack = createStackNavigator(
+  {  CreatePortfolioScreen : CreatePortfolio,
+     PortfolioOptionScreen: PortfolioOption,
+    Pin: CreatePin
+  },{
+    headerMode:'none',
+    navigationOptions:{
+      headerVisible: false,
+    }
+  }
+);
 
 export default SwitchNavigator(
   {
