@@ -8,10 +8,72 @@ import {
   AsyncStorage
 } from 'react-native';
 
+/*
+  https://github.com/beefe/react-native-keyboard
+  uses this keyboard find a better one if available
+*/
+import Keyboard from 'react-native-keyboard';
+
+let model = {
+
+    _keys: [],
+
+    _listeners: [],
+
+    addKey(key) {
+        this._keys.push(key);
+        this._notify();
+    },
+
+    delKey() {
+        this._keys.pop();
+        this._notify();
+    },
+
+    clearAll() {
+        this._keys = [];
+        this._notify();
+    },
+
+    getKeys() {
+        return this._keys;
+    },
+
+    onChange(listener) {
+        if (typeof listener === 'function') {
+            this._listeners.push(listener);
+        }
+    },
+
+    _notify() {
+        this._listeners.forEach((listner) => {
+            listner(this);
+        });
+    }
+};
 
 class createpin extends Component {
-  static navigationOptions ={
-    title: 'Create Pin',
+  constructor(props){
+    super(props);
+    this.state={
+      pin:''
+    };
+  }
+
+  componentDidMount(){
+    model.onChange((model)=>{
+      this.setState({pin:model.getKeys().join('')})
+    });
+  }
+  _handleKeyPress(key){
+    model.addKey(key);
+  }
+
+  _handleDelete(){
+    model.delKey();
+  }
+  _handleClear(){
+    model.clearAll();
   }
 
   /*
@@ -26,14 +88,24 @@ class createpin extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View  style={styles.textStyle}>
-          <Text>Please create 6 digit pin</Text>
+
+        <View style={styles.innerContainer}>
+          <View  style={styles.textStyle}>
+            <Text>Please create 6 digit pin</Text>
+            <TextInput style={styles.textInput} secureTextEntry={true} editable={false} value={this.state.pin}/>
+          </View>
+
+          <View style={styles.inputContainer}>
+            <Button title="submit" onPress={this._createPinAsync}/>
+          </View>
         </View>
 
-        <View style={styles.inputContainer}>
-          <TextInput/>
-          <Button title="submit" onPress={this._createPinAsync}/>
-        </View>
+        <Keyboard
+            keyboardType="decimal-pad"
+            onKeyPress={this._handleKeyPress.bind(this)}
+            onDelete={this._handleDelete.bind(this)}
+            onClear={this._handleClear.bind(this)}
+        />
       </View>
     );
   }
@@ -42,14 +114,20 @@ class createpin extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent:'center'
   },
+  innerContainer:{
+    flex:1,
+    justifyContent:'center'
+    },
   textStyle:{
     alignItems:'center',
   },
+  textInput:{
+    fontSize:14,
+  },
   inputContainer:{
-    marginLeft:5,
-    marginRight:5,
+    marginLeft:15,
+    marginRight:15,
     marginTop: 10,
   }
 });
