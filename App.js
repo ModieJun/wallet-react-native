@@ -14,6 +14,7 @@ import CreatePin from './src/screens/createpin';
 import PortfolioOption from './src/screens/portfoliooption';
 import CreatePortfolio from './src/screens/createportfolio';
 import Login from './src/screens/login';
+import PersonalAccList from './src/screens/personalacclist';
 
 
  class App extends React.Component {
@@ -51,7 +52,8 @@ const StartStack = createBottomTabNavigator(
 );
 
 const SplashStack = createStackNavigator(
-  { LoginScreen: Login,
+  { PersonalAccListScreen :PersonalAccList,
+    LoginScreen: Login,
     CreatePortfolioScreen : CreatePortfolio,
      PortfolioOptionScreen: PortfolioOption,
     Pin: CreatePin
