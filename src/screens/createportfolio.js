@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import {
   View,
@@ -18,14 +16,40 @@ export default class CreatePortfolio extends Component {
     return (
       <View style={styles.container}>
         <Lovechain/>
+
         <View style={styles.innerContainer}>
-            <Text  style={styles.textStyle}>Password</Text>
-            <Input containerStyle={styles.inputStyle} />
-            <Text style={styles.textStyle}>Confirm your password</Text>
-            <Input containerStyle={styles.inputStyle}/>
+            <Text style={styles.h1}>Create a Portfolio</Text>
+
+            <View style={styles.inputContainer}>
+              <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+                <Text  style={styles.textStyle}>Portfolio ID</Text>
+              </View>
+              <View style={{flex:2}}>
+                <Input containerStyle={styles.inputStyle} />
+              </View>
+            </View>
+
+            <View style={styles.inputContainer}>
+              <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+                <Text style={styles.textStyle}>Password</Text>
+              </View>
+              <View style={{flex:2}}>
+                <Input containerStyle={styles.inputStyle} />
+              </View>
+            </View>
+
+            <View style={styles.inputContainer}>
+              <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+                <Text style={styles.textStyle}>Confirm Password</Text>
+              </View>
+              <View style={{flex:2}}>
+                <Input containerStyle={styles.inputStyle} />
+              </View>
+            </View>
 
             <OkButton/>
         </View>
+
       </View>
     );
   }
@@ -41,12 +65,24 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
   },
+  inputContainer:{
+    flexDirection:'row',
+    margin:10,
+    borderRadius:20,
+    borderWidth:1,
+    paddingTop:5,
+    paddingBottom:5
+  },
   textStyle:{
-    fontSize:20,
+    fontSize:16,
+    textAlign:'center',
   },
   inputStyle:{
-    width:250,
-    marginBottom:10,
+
+  },h1:{
+    fontSize:24,
+    fontWeight:'500',
+    paddingBottom:20,
   }
 
 });
