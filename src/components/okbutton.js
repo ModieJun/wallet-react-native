@@ -7,16 +7,21 @@ import {
 import {Button} from 'react-native-elements';
 import EStyleSheet from 'react-native-extended-stylesheet';
 export default class OkButton extends Component {
+  constructor(props){
+    super(props);
+  }
+  
   render() {
     return (
         <Button title="OK"
           buttonStyle={styles.buttonStyle}
-          textStyle={styles.buttonText}/>
+          textStyle={styles.buttonText}
+          onPress={this.props.onPress}/>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   buttonStyle:{
     borderRadius:30,
     backgroundColor:"rgba(100,100,100,1)",
