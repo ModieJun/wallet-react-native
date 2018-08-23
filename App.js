@@ -14,7 +14,10 @@ import CreatePin from './src/screens/createpin';
 import PortfolioOption from './src/screens/portfoliooption';
 import CreatePortfolio from './src/screens/createportfolio';
 import Login from './src/screens/login';
+import LoginSuccess from './src/screens/loginsuccess'
 import PersonalAccList from './src/screens/personalacclist';
+
+
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 /**
@@ -63,6 +66,7 @@ const SplashStack = createStackNavigator(
     PortfolioOptionScreen: PortfolioOption,
     PersonalAccListScreen :PersonalAccList,
     LoginScreen: Login,
+    LoginSuccessScreen : LoginSuccess,
     CreatePortfolioScreen : CreatePortfolio,
   },{
     headerMode:'none',
