@@ -5,8 +5,8 @@ import {
   StyleSheet,ScrollView
 } from 'react-native';
 
+import EStyleSheet from 'react-native-extended-stylesheet';
 import Lovechain from '../components/lovechainlogo';
-import UserIcon from '../components/usericon';
 import Account from '../components/account';
 import AddAccount from  '../components/add_acc_button';
 
@@ -17,12 +17,12 @@ export default class PersonalAccList extends Component {
         <View style={{flex:1}}>
           <Lovechain/>
         </View>
-        <View style={{flex:2}}>
-
+        <View style={styles.innerContainer2}>
+          <Text>Amount: XXXX</Text>
+          <Text>Some extra little info</Text>
         </View>
-
         <View style={{flex:7,backgroundColor:'#eeeeee'}}>
-          <ScrollView contentContainerStyle={{alignItems:'center',}}>
+          <ScrollView contentContainerStyle={{alignItems:'center'}}>
             <Account userID='yvan'/>
             <Account userID='JJ'/>
             <AddAccount/>
@@ -34,8 +34,14 @@ export default class PersonalAccList extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container:{
     flex: 1,
+    backgroundColor:'#ffffff'
   },
+  innerContainer2:{
+    flex:2,
+    alignItems: 'center',
+    paddingTop: "15rem",
+  }
 });

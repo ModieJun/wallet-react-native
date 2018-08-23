@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button,AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View,Button,AsyncStorage ,Dimensions} from 'react-native';
 import { SwitchNavigator,createStackNavigator,createBottomTabNavigator } from 'react-navigation';
 /*
   BottomNav is something nice to have , but react-navigation has a build in
@@ -15,7 +15,14 @@ import PortfolioOption from './src/screens/portfoliooption';
 import CreatePortfolio from './src/screens/createportfolio';
 import Login from './src/screens/login';
 import PersonalAccList from './src/screens/personalacclist';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
+/**
+ * This is important for rendering the styles and calculating the screens 
+ * and rem.
+ */
+let entireScreenWidth  = Dimensions.get('window').width;
+EStyleSheet.build({$rem: entireScreenWidth/360});
 
  class App extends React.Component {
   constructor(){
