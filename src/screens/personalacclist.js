@@ -21,7 +21,7 @@ export default class PersonalAccList extends Component {
           <Text>Amount: XXXX</Text>
           <Text>Some extra little info</Text>
         </View>
-        <View style={{flex:7,backgroundColor:'#eeeeee'}}>
+        <View style={styles.accountView}>
           <ScrollView contentContainerStyle={{alignItems:'center'}}>
             <Account userID='yvan'/>
             <Account userID='JJ'/>
@@ -43,5 +43,10 @@ const styles = EStyleSheet.create({
     flex:2,
     alignItems: 'center',
     paddingTop: "15rem",
+  },accountView:{
+    flex:8,
+    backgroundColor: '#eeeeee',
+    paddingTop:"10rem",
   }
+
 });
