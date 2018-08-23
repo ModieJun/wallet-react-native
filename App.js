@@ -35,13 +35,13 @@ EStyleSheet.build({$rem: entireScreenWidth/360});
 
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
-    this.props.navigation.navigate(userToken ? 'Splash' : 'Start');
+    this.props.navigation.navigate(userToken ? 'Portfolio' : 'Start');
   };
 
   render(){
     return (
       <View style={{flex:1}}>
-
+        <Text>THIS IS THE SPLASHSCREEN</Text>
       </View>
     );
   }
@@ -59,10 +59,12 @@ const StartStack = createBottomTabNavigator(
 );
 
 const SplashStack = createStackNavigator(
-  { PersonalAccListScreen :PersonalAccList,
+  { 
+    PortfolioOptionScreen: PortfolioOption,
+    PersonalAccListScreen :PersonalAccList,
     LoginScreen: Login,
     CreatePortfolioScreen : CreatePortfolio,
-     PortfolioOptionScreen: PortfolioOption,
+  
     Pin: CreatePin
   },{
     headerMode:'none',
@@ -75,13 +77,11 @@ const SplashStack = createStackNavigator(
 export default SwitchNavigator(
   {
     AuthLoading: App,
-    Splash: SplashStack,
+    Portfolio: SplashStack,
     Start: StartStack,
   },
   {
     initialRouteName: 'AuthLoading',
   }
-
-
 
 );

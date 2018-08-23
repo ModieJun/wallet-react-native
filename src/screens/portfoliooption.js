@@ -10,25 +10,30 @@ import {
   React-native-elements for UI components;
 */
 import {Button} from 'react-native-elements';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import Lovechain from '../components/lovechainlogo';
 
 export default class PortfolioOption extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Lovechain/>
-      <View style={styles.innerContainer}>
+        <View style={{flex:1}}>
+          <Lovechain/>
+        </View>
+        
+        
+        <View style={styles.innerContainer}>
           <View style={styles.buttonContainer}>
             <Button title="Create Portfolio"
               buttonStyle={styles.buttonStyle}
-              textStyle={styles.buttonText}
+              titleStyle={styles.buttonText}
               />
           </View>
 
           <View style={styles.buttonContainer}>
             <Button title="Existing Portfolio"
               buttonStyle={styles.buttonStyle}
-              textStyle={styles.buttonText}
+              titleStyle={styles.buttonText}
               />
           </View>
         </View>
@@ -38,27 +43,30 @@ export default class PortfolioOption extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:'#ffffff'
   },
   innerContainer:{
-    flex:1,
+    flex:9,
     justifyContent:'center',
   },
   buttonContainer:{
-    marginTop:20,
-    marginLeft:15,
-    marginRight:15,
+    marginTop:'15rem',
+    marginLeft:'20rem',
+    marginRight:'20rem',
+
   },
   buttonStyle:{
     borderRadius:20,
     backgroundColor:"rgba(200,200,200,1)",
+    paddingTop:'5rem',
+    paddingBottom:'5rem',
   },
   buttonText:{
     color:'#000000',
-    fontSize:16,
+    fontSize:'16rem',
     fontWeight:'700'
   }
 });
