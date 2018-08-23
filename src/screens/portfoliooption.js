@@ -14,6 +14,26 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Lovechain from '../components/lovechainlogo';
 
 export default class PortfolioOption extends Component {
+  constructor(props){
+    super(props);
+
+    /*
+     *  Bind the function t 
+     */
+    this._navigateToScreen = this._navigateToScreen.bind(this);
+  }
+
+  /*
+   * Function for button to navigate to desired screen
+   */
+  _navigateToScreen(option){
+    if(option === "Existing"){
+      alert("Existing");
+    }else{
+      alert("Create");
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -27,6 +47,7 @@ export default class PortfolioOption extends Component {
             <Button title="Create Portfolio"
               buttonStyle={styles.buttonStyle}
               titleStyle={styles.buttonText}
+              onPress={()=> this._navigateToScreen('Create')}
               />
           </View>
 
@@ -34,6 +55,7 @@ export default class PortfolioOption extends Component {
             <Button title="Existing Portfolio"
               buttonStyle={styles.buttonStyle}
               titleStyle={styles.buttonText}
+              onPress={()=> this._navigateToScreen('Existing')}
               />
           </View>
         </View>
