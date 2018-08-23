@@ -19,7 +19,7 @@ export default class LogIn extends Component {
             <Text style={styles.textStyle}>Log in</Text>
             <Input containerStyle={styles.inputStyle}/>
 
-          <OkButton/>
+          <OkButton onPress={()=> this.props.navigation.navigate('LoginSuccessScreen')}/>
           </View>
 
       </View>

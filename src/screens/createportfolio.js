@@ -12,6 +12,11 @@ import Lovechain from '../components/lovechainlogo';
 
 
 export default class CreatePortfolio extends Component {
+
+  login(){
+    return(this.navigate.navigation('LoginScreen'));
+  }
+  
   render() {
     return (
       <View style={styles.container}>
@@ -47,7 +52,7 @@ export default class CreatePortfolio extends Component {
               </View>
             </View>
 
-            <OkButton/>
+            <OkButton onPress={()=>this.props.navigation.navigate('LoginScreen')}/>
         </View>
 
       </View>
