@@ -29,6 +29,7 @@ export default class PortfolioOption extends Component {
   _navigateToScreen(option){
     if(option === "Existing"){
       alert("Existing");
+      this.props.navigation.navigate('CreatePortfolioScreen');
     }else{
       alert("Create");
     }
@@ -47,7 +48,7 @@ export default class PortfolioOption extends Component {
             <Button title="Create Portfolio"
               buttonStyle={styles.buttonStyle}
               titleStyle={styles.buttonText}
-              onPress={()=> this._navigateToScreen('Create')}
+              onPress={()=> this.props.navigation.navigate('CreatePortfolioScreen')}
               />
           </View>
 
@@ -55,7 +56,7 @@ export default class PortfolioOption extends Component {
             <Button title="Existing Portfolio"
               buttonStyle={styles.buttonStyle}
               titleStyle={styles.buttonText}
-              onPress={()=> this._navigateToScreen('Existing')}
+              onPress={()=> this.props.navigation.navigate('LoginScreen')}
               />
           </View>
         </View>

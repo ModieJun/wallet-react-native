@@ -54,7 +54,7 @@ EStyleSheet.build({$rem: entireScreenWidth/360});
 */
 const StartStack = createBottomTabNavigator(
   {
-   HomeScreen:Home, WalletScreen:Wallet
+   HomeScreen:Home, WalletScreen:Wallet,Pin: CreatePin
  }
 );
 
@@ -64,8 +64,6 @@ const SplashStack = createStackNavigator(
     PersonalAccListScreen :PersonalAccList,
     LoginScreen: Login,
     CreatePortfolioScreen : CreatePortfolio,
-  
-    Pin: CreatePin
   },{
     headerMode:'none',
     navigationOptions:{
