@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import PinInput from '../components/inputpin';
 import Lovechain from '../components/lovechainlogo';
-import AccountTypeHeader from '../components/acctypeheader';
+import AccountTypeHeader from '../components/headertitle';
 import OkButton from '../components/okbutton';
 
 class createpin extends Component {

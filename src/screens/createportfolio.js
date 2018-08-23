@@ -25,7 +25,7 @@ export default class CreatePortfolio extends Component {
                 <Text  style={styles.textStyle}>Portfolio ID</Text>
               </View>
               <View style={{flex:2}}>
-                <Input containerStyle={styles.inputStyle} />
+                <Input containerStyle={styles.inputStyle}/>
               </View>
             </View>
 
@@ -34,7 +34,7 @@ export default class CreatePortfolio extends Component {
                 <Text style={styles.textStyle}>Password</Text>
               </View>
               <View style={{flex:2}}>
-                <Input containerStyle={styles.inputStyle} />
+                <Input containerStyle={styles.inputStyle}  keyboardType='numeric'  />
               </View>
             </View>
 
@@ -43,7 +43,7 @@ export default class CreatePortfolio extends Component {
                 <Text style={styles.textStyle}>Confirm Password</Text>
               </View>
               <View style={{flex:2}}>
-                <Input containerStyle={styles.inputStyle} />
+                <Input containerStyle={styles.inputStyle}  keyboardType='numeric' />
               </View>
             </View>
 

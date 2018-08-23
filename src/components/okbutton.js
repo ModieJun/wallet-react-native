@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import {
   View,
@@ -7,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {Button} from 'react-native-elements';
-
+import EStyleSheet from 'react-native-extended-stylesheet';
 export default class OkButton extends Component {
   render() {
     return (

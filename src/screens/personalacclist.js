@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
+  StyleSheet,ScrollView
 } from 'react-native';
 
 import Lovechain from '../components/lovechainlogo';
@@ -14,20 +14,19 @@ export default class PersonalAccList extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Lovechain />
-
         <View style={{flex:1}}>
-          <View style={{flex:1}}>
-            <UserIcon  name="Yvan"/>
-          </View>
+          <Lovechain/>
+        </View>
+        <View style={{flex:2}}>
 
-          <View style={{flex:2}}>
-              <Account info="Joint account"/>
-              <Account info="Personal account"/>
-              <AddAccount/>
-          </View>
+        </View>
 
-
+        <View style={{flex:7,backgroundColor:'#eeeeee'}}>
+          <ScrollView contentContainerStyle={{alignItems:'center',}}>
+            <Account userID='yvan'/>
+            <Account userID='JJ'/>
+            <AddAccount/>
+          </ScrollView>
         </View>
 
       </View>
