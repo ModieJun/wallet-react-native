@@ -5,6 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {Input} from 'react-native-elements';
+import EStyleSheet  from 'react-native-extended-stylesheet';
 import OkButton from '../components/okbutton';
 import Lovechain from '../components/lovechainlogo';
 
@@ -26,9 +27,10 @@ export default class LogIn extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#ffffff',
   },
   innerContainer:{
     flex:1,
