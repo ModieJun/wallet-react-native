@@ -24,5 +24,6 @@ const styles = EStyleSheet.create({
     marginTop:'40rem',
     marginBottom:'10rem',
     marginLeft:'15rem',
+    color:'#333333'
   }
 });
