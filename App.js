@@ -69,6 +69,10 @@ const Menu = createStackNavigator(
   {
     PersonalAccListScreen: PersonalAccList,
     ScanQRScreen:ScanQR,
+  },
+  {
+    mode:'modal',
+    headerMode:'none',
   }
 )
 

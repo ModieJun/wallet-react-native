@@ -4,13 +4,15 @@ import {
   Text,
   StyleSheet,ScrollView
 } from 'react-native';
-
+import {Button} from 'react-native-elements';
+import Styles from '../styles'
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+
 import Lovechain from '../components/lovechainlogo';
 import Account from '../components/account';
 import AddAccount from  '../components/add_acc_button';
-import ToolBar from '../components/toolbar';
-
 export default class PersonalAccList extends Component {
   render() {
     return (
@@ -32,7 +34,32 @@ export default class PersonalAccList extends Component {
           </ScrollView>
         </View>
 
-        <ToolBar/>
+        <View style={[Styles.container,Styles.flexRow]}>
+            <View style={Styles.container}>
+                <Button title="Scan QR Code"
+                    icon={<Icon name='qrcode-scan' size={15} color='white' />}
+                    buttonStyle={Styles.btnStyle} 
+                    titleStyle={Styles.btntitle}
+                    onPress={()=> this.props.navigation.navigate('ScanQRScreen')}
+                />
+            </View>
+
+            <View style={Styles.container}>
+                <Button title="Show QR Code" 
+                    icon={<Icon name='qrcode' size={15}/>}
+                    buttonStyle={Styles.btnStyle} 
+                    titleStyle={Styles.btntitle}                
+                    />
+            </View>
+
+            <View style={Styles.container}>
+                <Button title="Messaging" 
+                     buttonStyle={Styles.btnStyle} 
+                     titleStyle={Styles.btntitle}                   
+                        />
+            </View>
+        </View>
+        
       </View>
     );
   }
