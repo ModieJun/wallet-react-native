@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import {Button} from 'react-native-elements';
 
@@ -13,13 +14,13 @@ export default class AddAccountButton extends Component {
       <View style={styles.container}>
           <Button title="add iCon"
             buttonStyle={styles.buttonStyles}
-            textStyle={styles.btTextStyle}/>
+            titleStyle={styles.btTextStyle}/>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     marginTop:25,
     alignItems:'center'
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#aaaaaa'
   },
   btTextStyle:{
-
+    color:'#555555',
+    fontWeight: 'normal',
   }
 });
