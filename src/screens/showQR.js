@@ -17,7 +17,7 @@ export default class ShowQRCode extends Component {
         <Lovechian/>
         <Text> Show QR Code </Text>
         <QRCode 
-          value='https://www.baidu.com/'
+          value='https://www.bilibili.com/'
           size={200}
         />
       </View>
