@@ -19,6 +19,14 @@ export default  EStyleSheet.create({
         backgroundColor:'#eeeeee' ,      
     },greyD:{
         backgroundColor:'#dddddd',
-    }
+    },
 
+    //TOOLBAR STYLES
+    btnStyle:{
+        backgroundColor:'#333333',
+        borderRadius:0,
+    },
+    btntitle:{
+        color:'#ffffff'
+    }
 });
