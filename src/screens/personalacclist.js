@@ -9,6 +9,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Lovechain from '../components/lovechainlogo';
 import Account from '../components/account';
 import AddAccount from  '../components/add_acc_button';
+import ToolBar from '../components/toolbar';
 
 export default class PersonalAccList extends Component {
   render() {
@@ -17,10 +18,12 @@ export default class PersonalAccList extends Component {
         <View style={{flex:1}}>
           <Lovechain/>
         </View>
+        
         <View style={styles.innerContainer2}>
           <Text>Amount: XXXX</Text>
           <Text>Some extra little info</Text>
         </View>
+
         <View style={styles.accountView}>
           <ScrollView contentContainerStyle={{alignItems:'center'}}>
             <Account userID='yvan'/>
@@ -29,6 +32,7 @@ export default class PersonalAccList extends Component {
           </ScrollView>
         </View>
 
+        <ToolBar/>
       </View>
     );
   }
