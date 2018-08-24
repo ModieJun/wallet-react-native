@@ -19,6 +19,7 @@ import PersonalAccList from './src/screens/personalacclist';
 import Trade from './src/screens/trade';
 import AccDetails from './src/screens/accdetails';
 import ScanQR from './src/screens/scanqr';
+import ShowQR from './src/screens/showqr';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -69,6 +70,7 @@ const Menu = createStackNavigator(
   {
     PersonalAccListScreen: PersonalAccList,
     ScanQRScreen:ScanQR,
+    ShowQRScreen:ShowQR,
   },
   {
     mode:'modal',

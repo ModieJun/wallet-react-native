@@ -48,7 +48,8 @@ export default class PersonalAccList extends Component {
                 <Button title="Show QR Code" 
                     icon={<Icon name='qrcode' size={15}/>}
                     buttonStyle={Styles.btnStyle} 
-                    titleStyle={Styles.btntitle}                
+                    titleStyle={Styles.btntitle} 
+                    onPress={()=> this.props.navigation.navigate('ShowQRScreen')}               
                     />
             </View>
 
