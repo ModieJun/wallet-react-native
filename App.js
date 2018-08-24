@@ -16,6 +16,8 @@ import CreatePortfolio from './src/screens/createportfolio';
 import Login from './src/screens/login';
 import LoginSuccess from './src/screens/loginsuccess'
 import PersonalAccList from './src/screens/personalacclist';
+import Trade from './src/screens/trade';
+import AccDetails from './src/screens/accdetails';
 
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -58,7 +60,8 @@ EStyleSheet.build({$rem: entireScreenWidth/360});
 const StartBottomTab = createBottomTabNavigator(
   {
     PersonalAccListScreen :PersonalAccList,
-
+    TradeScreen: Trade,
+    AccDetailsScreen: AccDetails,
    }
 );
 
