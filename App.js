@@ -65,6 +65,12 @@ const StartBottomTab = createBottomTabNavigator(
    }
 );
 
+const Menu = createStackNavigator(
+  {
+    PersonalAccListScreen: PersonalAccList,
+  }
+)
+
 const SplashStack = createStackNavigator(
   { 
     PortfolioOptionScreen: PortfolioOption,
