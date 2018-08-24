@@ -18,7 +18,7 @@ import LoginSuccess from './src/screens/loginsuccess'
 import PersonalAccList from './src/screens/personalacclist';
 import Trade from './src/screens/trade';
 import AccDetails from './src/screens/accdetails';
-
+import ScanQR from './src/screens/scanqr';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -68,6 +68,7 @@ const StartBottomTab = createBottomTabNavigator(
 const Menu = createStackNavigator(
   {
     PersonalAccListScreen: PersonalAccList,
+    ScanQRScreen:ScanQR,
   }
 )
 
@@ -89,7 +90,7 @@ export default SwitchNavigator(
   {
     AuthLoading: App,
     Portfolio: SplashStack,
-    Start: StartBottomTab,
+    Start: Menu,
   },
   {
     initialRouteName: 'AuthLoading',
