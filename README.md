@@ -6,4 +6,4 @@ native CryptoWallet
  react-native-vector-icons
   react-native-elemtents@1.0.0 beta
 react-native-extended-stylesheet
-  react-native-qrcode
+react-native-qrcode
