@@ -18,6 +18,7 @@ export default class ShowQRCode extends Component {
         <Text> Show QR Code </Text>
         <QRCode 
           value='https://www.baidu.com/'
+          size={200}
         />
       </View>
     );
