@@ -53,18 +53,18 @@ EStyleSheet.build({$rem: entireScreenWidth/360});
 /*
     CREATES TWO SEPERATE PATHS FOR NAVIGATION TO GO TO
     1.SPLASH SCREEN  => THEN WE HEAD TO THE NEXT
-    2.HOME SCREEN + WALLET SCREEN
+    2.START => MENU
 */
-const StartStack = createBottomTabNavigator(
+const StartBottomTab = createBottomTabNavigator(
   {
-   HomeScreen:Home, WalletScreen:Wallet,Pin: CreatePin
- }
+    PersonalAccListScreen :PersonalAccList,
+
+   }
 );
 
 const SplashStack = createStackNavigator(
   { 
     PortfolioOptionScreen: PortfolioOption,
-    PersonalAccListScreen :PersonalAccList,
     LoginScreen: Login,
     LoginSuccessScreen : LoginSuccess,
     CreatePortfolioScreen : CreatePortfolio,
@@ -80,7 +80,7 @@ export default SwitchNavigator(
   {
     AuthLoading: App,
     Portfolio: SplashStack,
-    Start: StartStack,
+    Start: StartBottomTab,
   },
   {
     initialRouteName: 'AuthLoading',
