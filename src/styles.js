@@ -25,8 +25,10 @@ export default  EStyleSheet.create({
     btnStyle:{
         backgroundColor:'#333333',
         borderRadius:0,
+        height:'100%'
     },
     btntitle:{
         color:'#ffffff'
-    }
+    },
+
 });
